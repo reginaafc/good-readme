@@ -1,4 +1,4 @@
-# readme generator
+# VIDEO EXAMPLE: readme generator
 license: Academic Free License v3.0
 
 Click here to go to the website: <none >
