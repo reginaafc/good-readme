@@ -13,8 +13,8 @@
   - [Instructions](#instructions) 
   - [Installation](#installation) 
   - [Usage](#usage) 
- - [Test instructions](#test) 
- - [Contribution guidelines](#contribution)
+  - [Test instructions](#Test-instructions) 
+  - [Contribution guidelines](#Contribution-guidelines)
   - [Questions](#questions)
   - [Credits](#credits)
     
@@ -34,12 +34,12 @@
     
    usage....
     
-## Test instructions
+## Test-instructions
     
    test....
     
-## Contribution guidelines
-    contribution...
+## Contribution-guidelines
+   contribution...
    
 ## Questions
    If you have any question please contact me to: email...
