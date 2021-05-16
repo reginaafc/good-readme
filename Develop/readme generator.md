@@ -10,13 +10,13 @@
     
 ## Table of Contents 📋
     Here's a table of contents to make it easier to find what what you are looking for.
-    - [Instructions](#instructions) 
-    - [Installation](#installation) 
-    - [Usage](#usage) 
-    - [Test instructions](#test instructions) 
-    - [Contribution guidelines](#contribution guidelines)
-    - [Questions](#questions)
-    - [Credits](#credits)
+   - [Instructions](#instructions) 
+   - [Installation](#installation) 
+   - [Usage](#usage) 
+   - [Test instructions](#test instructions) 
+   - [Contribution guidelines](#contribution guidelines)
+   - [Questions](#questions)
+   - [Credits](#credits)
     
 ## Instructions 
     instructions... 
