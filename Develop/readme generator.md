@@ -13,8 +13,8 @@
   - [Instructions](#instructions) 
   - [Installation](#installation) 
   - [Usage](#usage) 
-  - [Test instructions](#test instructions) 
-  - [Contribution guidelines](#contribution guidelines)
+ - [Test instructions](#test instructions) 
+ - [Contribution guidelines](#contribution guidelines)
   - [Questions](#questions)
   - [Credits](#credits)
     
