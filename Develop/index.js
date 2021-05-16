@@ -116,7 +116,7 @@ inquirer.prompt(questions).then((response) => {
 ## License
  ${licenseBadge}
     
-  Click here to go to the website: <${response.deployedlink} >
+  Click here to go to the website: <${response.deployedlink}>
     
 ## Description 📝
     
@@ -136,7 +136,7 @@ inquirer.prompt(questions).then((response) => {
   ${response.instructions} 
     
 ## Installation 
-  Once you are in my gitgub repository for this project, <${response.repolink} >: 
+  Once you are in my gitgub repository for this project, <${response.repolink}>: 
   <br>
   1.- First you need to get the HTTPS or GitHub CLI from the green button in the top right corner that says "Code". 🟢
   <br>
