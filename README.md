@@ -1,7 +1,10 @@
 
 # Good README Generator
-license: Academic Free License v3.0
 
+## License
+ [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+
+Click here to see the app video: <https://drive.google.com/file/d/1HCchIzx4jA54qsoagjjJ_WjqTsxYVgbL/view>
 
 ## Description 📝
 
