@@ -1,156 +1,178 @@
 // TODO: Include packages needed for this application
-const inquirer = require('inquirer');
-const fs = require('fs');
-const path = './README.md'
+const inquirer = require("inquirer");
+const fs = require("fs");
+const path = "./README.md";
+// Agregar link a readme
 
-// TODO: Create an array of questions for user input
-const questions = [];
 
-//License, Contributing, Tests, and Questions
-inquirer
-  .prompt([
-    {
-      type: 'list',
-      message: "What is your project's license?",
-      choices: [ "Academic Free License v3.0", 
-      "Apache license 2.0", 
-      "Artistic license 2.0",
-      "Boost Software License 1.0",
-      "BSD 2-clause 'Simplified' license",
-      "BSD 3-clause 'New' or 'Revised' license",
-      "BSD 3-clause Clear license",
-      "Creative Commons license family",
-      "Creative Commons Zero v1.0 Universal",
-      "Creative Commons Attribution 4.0",
-      "Creative Commons Attribution Share Alike 4.0",
-      
-      "Educational Community License v2.0",
-      "Eclipse Public License 1.0",
-      "European Union Public License 1.1",
-      "GNU Affero General Public License v3.0",
-      "GNU General Public License family",
-      "GNU General Public License v2.0",
-      "GNU General Public License v3.0",
-      "GNU Lesser General Public License family",
-      "GNU Lesser General Public License v2.1",
-      "GNU Lesser General Public License v3.0",
-      "ISC",
-      "LaTeX Project Public License v1.3c",
-      "Microsoft Public License",
+const questions = [
+  {
+    type: "list",
+    message: "What is your project's license?",
+    choices: [
+      "Apache 2.0",
+      "BSD 2-Clause",
+      "BSD 3-Clause",
+      "GNU AGPLv3.0",
+      "GNU GPLv2.0",
+      "GNU GPLv3.0",
       "MIT",
-      "Mozilla Public License 2.0",
-      "Open Software License 3.0",
-      "PostgreSQL License",
-      "SIL Open Font License 1.1",
-      "University of Illinois/NCSA Open Source License",
-      "The Unlicense",
-      "zLib License"],
-      name: 'license',
-    },
-    {
-        type: 'input',
-        message: 'What is your name?',
-        name: 'name',
-      },
-    {
-      type: 'input',
-      message: 'What is the title of your project?',
-      name: 'title',
-    },
-    {
-      type: 'input',
-      message: 'What is the description of your project?',
-      name: 'description',
-    },
-    {
-      type: 'input',
-      message: 'What is the link to the gitHub repo for this project?',
-      name: 'repolink',
-    },
-    {
-        type: 'input',
-        message: 'What is the link to the deployed version?',
-        name: 'deployedlink',
-      },
-    {
-        type: 'input',
-        message: 'What is the usage of this project?',
-        name: 'usage',
-      },
-      {
-        type: 'input',
-        message: 'What are the instructions for this project?',
-        name: 'instructions',
-      },
-      {
-        type: 'input',
-        message: 'What is the link of your gitHub profile?',
-        name: 'profile',
-      },
-      {
-        type: 'input',
-        message: 'What is your email?',
-        name: 'email',
-      },
-  ]).then((response) =>  {try {
+      "Mozilla Public 2.0",
+    ],
+    name: "license",
+  },
+  {
+    type: "input",
+    message: "What is the title of your project?",
+    name: "title",
+  },
+  {
+    type: "input",
+    message: "What is the description of your project?",
+    name: "description",
+  },
+  {
+    type: "input",
+    message: "What is the usage of this project?",
+    name: "usage",
+  },
+  {
+    type: "input",
+    message: "What are the instructions for this project?",
+    name: "instructions",
+  },
+  {
+    type: "input",
+    message: "What are the test instructions for this project?",
+    name: "test",
+  },
+  {
+    type: "input",
+    message: "What are the contribution guidelines for this project?",
+    name: "contribution",
+  },
+  {
+    type: "input",
+    message: "What is the link to the gitHub repo for this project?",
+    name: "repolink",
+  },
+  {
+    type: "input",
+    message: "What is the link to the deployed version?",
+    name: "deployedlink",
+  },
+  {
+    type: "input",
+    message: "What is your name?",
+    name: "name",
+  },
+  {
+    type: "input",
+    message: "What is the link to your gitHub profile?",
+    name: "profile",
+  },
+  {
+    type: "input",
+    message: "What is your email?",
+    name: "email",
+  },
+];
 
-fs.appendFile(`${response.title}.md`, `# ${response.title}
-license: ${response.license}
 
-Click here to go to the website: <${response.deployedlink} >
-
+inquirer.prompt(questions).then((response) => {
+  switch (response.license) {
+    case 'Apache 2.0':
+      licenseBadge = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+      break;
+    case 'BSD 2-Clause':
+      licenseBadge = `[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)`;
+      break;
+    case 'BSD 3-Clause':
+      licenseBadge = `[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`;
+      break;
+    case 'GNU AGPLv3.0':
+      licenseBadge = `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`;
+      break;
+    case 'GNU GPLv2.0':
+      licenseBadge = `[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)`;
+      break;
+    case 'GNU GPLv3.0':
+      licenseBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+      break;
+    case 'MIT':
+      licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+      break;
+    case 'Mozilla Public 2.0':
+      licenseBadge = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
+      break;
+    default:
+      break;
+  }
+  try {
+    //  Create the file
+    fs.appendFile(
+      `${response.title}.md`,
+      `# ${response.title}
+## License
+ ${licenseBadge}
+    
+  Click here to go to the website: <${response.deployedlink} >
+    
 ## Description 📝
-
-${response.description} 
-
+    
+   ${response.description} 
+    
 ## Table of Contents 📋
-Here's a table of contents to make it easier to find what what you are looking for.
-- [Instructions](#instructions) 
-- [Installation](#installation) 
-- [Usage](#usage) 
-- [Questions](#questions)
-- [Credits](#credits)
-
+  Here's a table of contents to make it easier to find what what you are looking for.
+ - [Instructions](#instructions) 
+ - [Installation](#installation) 
+ - [Usage](#usage) 
+ - [Test instructions](#test-instructions) 
+  - [Contribution guidelines](#contribution-guidelines)
+  - [Questions](#questions)
+  - [Credits](#credits)
+    
 ## Instructions 
-${response.instructions} 
-
+  ${response.instructions} 
+    
 ## Installation 
-Once you are in my gitgub repository for this project, <${response.repolink} >: 
-<br>
-1.- First you need to get the HTTPS or GitHub CLI from the green button in the top right corner that says "Code". 🟢
-<br>
-2.- Once you have copied the URL, open your terminal and cd to the place where you want to put the clone. 
-<br>
-3.- Then write the next code "git clone and the link you've copied ".
+  Once you are in my gitgub repository for this project, <${response.repolink} >: 
+  <br>
+  1.- First you need to get the HTTPS or GitHub CLI from the green button in the top right corner that says "Code". 🟢
+  <br>
+  2.- Once you have copied the URL, open your terminal and cd to the place where you want to put the clone. 
+ <br>
+ 3.- Then write the next code "git clone and the link you've copied ".
 
 ## Usage
-${response.usage}.
-
+    
+ ${response.usage}.
+    
+## Test-instructions
+    
+  ${response.test}.
+    
+## Contribution-guidelines
+  ${response.contribution}
+    
 ## Questions
-If you have any question contact me to my email: ${response.email}
-
+  If you have any question please contact me to: ${response.email}
+  Or to my gitHub: <${response.profile}>
+    
 ## Credits
-Created with ♥️ by ${response.name}, <${response.profile}>.
-  
-`, (err) =>
-  err ? console.error(err) : console.log('File created!')
-) 
-  } catch(err) {
-    console.error(err)
-  }}
-  
+  Created with ♥️ by ${response.name}, <${response.profile}>.
+      
+`,
+      (err) =>
+        // Logs errors
+        err ? console.error(err) : console.log("File created!")
+    );
+  } catch (err) {
+    console.error(err);
+  }
+});
 
-);
+function init() {
+}
 
-
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
 init();
-
-
